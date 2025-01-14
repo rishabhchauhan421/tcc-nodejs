@@ -17,6 +17,10 @@ const { body, validationResult } = require('express-validator');
 
 const router = express.Router();
 
+router.get('/', (req: Request, res: Response) => {
+  res.send('Hello, World!');
+});
+
 router.post(
   '/api/orders/send-notification',
   [body('orderId').trim()],
