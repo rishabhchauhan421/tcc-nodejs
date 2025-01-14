@@ -14,7 +14,7 @@ export class MailTemplateForOrderConfirmation {
 
 export class MailTemplateForOrderItemStatusChange {
   static orderItemStatusChangeBodyForUser =
-    'Your order item status has been changed';
+    'Your order item status has been changed ';
   static orderItemStatusChangeTemplatePathForUser =
     '/mailTemplates/orderItemStatusChangeTemplate.html';
 
