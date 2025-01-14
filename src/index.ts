@@ -1,6 +1,4 @@
-import mongoose from 'mongoose';
 import { app } from './app';
-import { BadRequestError } from './errors/bad-request-error';
 
 const startup = async () => {
   // if (!process.env.JWT_KEY) {
@@ -17,8 +15,8 @@ const startup = async () => {
   //   console.error(e);
   // }
 
-  app.listen(3003, () => {
-    console.log('Listening on port 3003!');
+  app.listen(process.env.PORT, () => {
+    console.log(`Listening on port ${process.env.PORT}!`);
   });
 };
 

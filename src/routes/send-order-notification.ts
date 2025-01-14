@@ -22,6 +22,7 @@ router.post(
   [body('orderId').trim()],
   validateRequest,
   async (req: Request, res: Response): Promise<any> => {
+    console.log('send-notification route hit');
     const { orderId } = req.body;
 
     const orderWithDetails = await db.order.findUnique({
