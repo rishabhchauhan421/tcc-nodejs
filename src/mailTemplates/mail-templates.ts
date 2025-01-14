@@ -5,11 +5,11 @@ export class MailTemplateForOrderConfirmation {
   static orderConfirmationTemplatePathForUser = `src/mailTemplates/orderConfirmationTemplate.html`;
   static orderConfirmationBodyForAdmin =
     'Your order has been placed successfully';
-  static orderConfirmationTemplatePathForAdmin = `https://drippy-dev-posters.s3.ap-south-1.amazonaws.com/admin/mailTemplates/orderConfirmationTemplate.html`;
+  static orderConfirmationTemplatePathForAdmin = `src/mailTemplates/orderConfirmationTemplate.html`;
 
   static orderConfirmationBodyForCreator =
     'Your order has been placed successfully';
-  static orderConfirmationTemplatePathForCreator = `https://drippy-dev-posters.s3.ap-south-1.amazonaws.com/admin/mailTemplates/orderConfirmationTemplate.html`;
+  static orderConfirmationTemplatePathForCreator = `src/mailTemplates/orderConfirmationTemplate.html`;
 }
 
 export class MailTemplateForOrderItemStatusChange {
