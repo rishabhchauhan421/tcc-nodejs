@@ -157,14 +157,14 @@ router.post(
         emailType: EmailType.CREATORORDERCONFIRMATION,
       });
 
-      const htmlToSendForCreator = templateForCreator(orderConfirmationData);
-      MailRouter.sendMail({
-        toEmail: 'rshbhchauhan@gmail.com',
-        subject: `Order #${orderWithDetails.orderNumber} Confirmed`,
-        body: orderConfirmationBodyForCreator,
-        html: htmlToSendForCreator,
-        emailType: EmailType.CREATORORDERCONFIRMATION,
-      });
+      // const htmlToSendForCreator = templateForCreator(orderConfirmationData);
+      // MailRouter.sendMail({
+      //   toEmail: 'rshbhchauhan@gmail.com',
+      //   subject: `Order #${orderWithDetails.orderNumber} Confirmed`,
+      //   body: orderConfirmationBodyForCreator,
+      //   html: htmlToSendForCreator,
+      //   emailType: EmailType.CREATORORDERCONFIRMATION,
+      // });
     } catch (err) {
       console.error(err);
     }
