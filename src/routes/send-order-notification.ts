@@ -74,28 +74,33 @@ router.post(
 
     try {
       const __dirnameForUser = path.resolve();
+
       const filePathForUser = path.join(
         __dirnameForUser,
         orderConfirmationTemplatePathForUser
       );
-
       const sourceForUser = fs
         .readFileSync(filePathForUser, 'utf-8')
         .toString();
-
       const templateForUser = Handlebars.compile(sourceForUser);
 
-      // const orderConfirmationFileForAdmin = await fetch(
-      //   orderConfirmationTemplatePathForAdmin
-      // );
-      // const sourceForAdmin = await orderConfirmationFileForAdmin.text();
-      // const templateForAdmin = Handlebars.compile(sourceForAdmin);
+      const filePathForAdmin = path.join(
+        __dirnameForUser,
+        orderConfirmationTemplatePathForAdmin
+      );
+      const sourceForAdmin = fs
+        .readFileSync(filePathForAdmin, 'utf-8')
+        .toString();
+      const templateForAdmin = Handlebars.compile(sourceForAdmin);
 
-      // const orderConfirmationFileForCreator = await fetch(
-      //   orderConfirmationTemplatePathForCreator
-      // );
-      // const sourceForCreator = await orderConfirmationFileForCreator.text();
-      // const templateForCreator = Handlebars.compile(sourceForCreator);
+      const filePathForCreator = path.join(
+        __dirnameForUser,
+        orderConfirmationTemplatePathForCreator
+      );
+      const sourceForCreator = fs
+        .readFileSync(filePathForCreator, 'utf-8')
+        .toString();
+      const templateForCreator = Handlebars.compile(sourceForCreator);
 
       const items = orderWithDetails.orderItems.map((item: any) => {
         return {
@@ -138,23 +143,23 @@ router.post(
         emailType: EmailType.CREATORORDERCONFIRMATION,
       });
 
-      // const htmlToSendForAdmin = templateForAdmin(orderConfirmationData);
-      // MailRouter.sendMail({
-      //   toEmail: 'rshbhchauhan@gmail.com',
-      //   subject: `Order #${orderWithDetails.orderNumber} Confirmed`,
-      //   body: orderConfirmationBodyForAdmin,
-      //   html: htmlToSendForAdmin,
-      //   emailType: EmailType.CREATORORDERCONFIRMATION,
-      // });
+      const htmlToSendForAdmin = templateForAdmin(orderConfirmationData);
+      MailRouter.sendMail({
+        toEmail: 'rshbhchauhan@gmail.com',
+        subject: `Order #${orderWithDetails.orderNumber} Confirmed`,
+        body: orderConfirmationBodyForAdmin,
+        html: htmlToSendForAdmin,
+        emailType: EmailType.CREATORORDERCONFIRMATION,
+      });
 
-      // const htmlToSendForCreator = templateForCreator(orderConfirmationData);
-      // MailRouter.sendMail({
-      //   toEmail: 'rshbhchauhan@gmail.com',
-      //   subject: `Order #${orderWithDetails.orderNumber} Confirmed`,
-      //   body: orderConfirmationBodyForCreator,
-      //   html: htmlToSendForCreator,
-      //   emailType: EmailType.CREATORORDERCONFIRMATION,
-      // });
+      const htmlToSendForCreator = templateForCreator(orderConfirmationData);
+      MailRouter.sendMail({
+        toEmail: 'rshbhchauhan@gmail.com',
+        subject: `Order #${orderWithDetails.orderNumber} Confirmed`,
+        body: orderConfirmationBodyForCreator,
+        html: htmlToSendForCreator,
+        emailType: EmailType.CREATORORDERCONFIRMATION,
+      });
     } catch (err) {
       console.error(err);
     }
