@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Product Status Change Notification</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto;
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+        .notification-message {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://drippy-dev-posters.s3.ap-south-1.amazonaws.com/admin/logo.jpeg" alt="The Custom Crow" class="logo">
+        <h1>Product Status Change Notification</h1>
+        
+        <p>Dear {{ name }},</p>
+
+        <p>We're writing to inform you that the status of your product {{ productTitle }} has been {{ productStatus }}. Please log in to your account to view the details.</p>
+
+        <p class="notification-message">Thank you for choosing The Custom Crow!</p>
+    </div>
+</body>
+</html>

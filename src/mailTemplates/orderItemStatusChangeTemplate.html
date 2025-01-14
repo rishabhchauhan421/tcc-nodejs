@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ this.templateTitle }}</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 8px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .logo {
+            display: block;
+            margin: 0 auto;
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+      .thank-you {
+            text-align: center;
+            margin-top: 20px;
+            margin-bottom: 40px; /* Added margin bottom */
+            padding-top: 10px; /* Added padding top */
+            padding-bottom: 10px; /* Added padding bottom */
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://drippy-dev-posters.s3.ap-south-1.amazonaws.com/admin/logo.jpeg" alt="The Custom Crow" class="logo">
+        <h1>Order Status Changed</h1>
+        
+        <p>Hi {{ customerName }},</p>
+
+        <p>We have an update for you. Your order status has changed. Here are the details:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ this.productName }}</td>
+                    <td>{{ this.quantity }}</td>
+                    <td>{{ this.status }}</td>
+                </tr>
+            </tbody>
+        </table>
+        <p class="thank-you">Stay Tuned for more updates!</p>
+    </div>
+</body>
+</html>
