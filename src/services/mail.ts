@@ -309,8 +309,8 @@ export class MailRouter {
       port: 465,
       secure: true,
       auth: {
-        user: process.env.ZOHO_NOREPLY_EMAIL,
-        pass: process.env.ZOHO_NOREPLY_PASSWORD,
+        user: process.env.ZOHO_AUTH_USER,
+        pass: process.env.ZOHO_AUTH_PASSWORD,
       },
     });
 

@@ -27,6 +27,8 @@ router.post(
   validateRequest,
   async (req: Request, res: Response): Promise<any> => {
     console.log('send-notification route hit');
+    const body = req.body;
+    console.log({ body });
     const { orderId } = req.body;
 
     const orderWithDetails = await db.order.findUnique({
@@ -43,7 +45,10 @@ router.post(
       },
     });
 
-    if (!orderWithDetails) throw new NotFoundError();
+    if (!orderWithDetails) {
+      console.error("Order doesn't exist: ", orderId);
+      throw new NotFoundError();
+    }
     const variants = await db.variant.findMany({
       where: {
         variantId: {
